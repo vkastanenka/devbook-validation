@@ -1,0 +1,25 @@
+{
+  "name": "@vkastanenka/devbook-validation",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "keywords": [],
+  "author": "Victoria Kastanenka",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "validator": "^13.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/validator": "^13.12.2",
+    "@vkastanenka/devbook-types": "^0.0.2",
+    "typescript": "^5.6.3"
+  }
+}
