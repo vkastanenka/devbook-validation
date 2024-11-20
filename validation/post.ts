@@ -54,7 +54,7 @@ export const postCreateCommentFormSchema: z.ZodType<PostCreateCommentFormData> =
 export const postUpdateCommentFormSchema: z.ZodType<PostUpdateCommentFormData> =
   z
     .object({
-      body: postCommentBodySchema.optional(),
+      body: postCommentBodySchema.or(z.literal('')),
     })
     .strict()
 
@@ -68,12 +68,12 @@ export const postCreatePostFormSchema: z.ZodType<PostCreatePostFormData> = z
 
 export const postUpdatePostFormSchema: z.ZodType<PostUpdatePostFormData> = z
   .object({
-    body: postBodySchema.optional(),
+    body: postBodySchema.or(z.literal('')),
   })
   .strict()
 
 /**
- * Request bodies
+ * Request Bodies
  */
 
 // Comment

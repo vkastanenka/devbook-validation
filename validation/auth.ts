@@ -13,7 +13,7 @@ import { emailSchema } from '.'
 import { userNameSchema, userUsernameSchema, userPasswordSchema } from './user'
 
 /**
- * Request bodies
+ * Request Bodies
  */
 
 export const authLoginReqBodySchema: z.ZodType<AuthLoginFormData> = z

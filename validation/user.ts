@@ -159,19 +159,19 @@ const userExperienceDescriptionSchema: z.ZodType<UserExperienceDescription> = z
 
 export const userUpdateBioFormSchema: z.ZodType<UserUpdateBioFormData> = z
   .object({
-    bio: userBioSchema.optional(),
+    bio: userBioSchema.or(z.literal('')),
   })
   .strict()
 
 export const userUpdateDetailsFormSchema: z.ZodType<UserUpdateDetailsFormData> =
   z
     .object({
-      name: userNameSchema.optional(),
-      email: emailSchema.optional(),
-      pronouns: userPronounsSchema.nullable().optional(),
-      headline: userHeadlineSchema.nullable().optional(),
-      phone: userPhoneSchema.nullable().optional(),
-      website: userWebsiteSchema.nullable().optional(),
+      name: userNameSchema.or(z.literal('')),
+      email: emailSchema.or(z.literal('')),
+      pronouns: userPronounsSchema.nullable().or(z.literal('')),
+      headline: userHeadlineSchema.nullable().or(z.literal('')),
+      phone: userPhoneSchema.nullable().or(z.literal('')),
+      website: userWebsiteSchema.nullable().or(z.literal('')),
     })
     .strict()
 
@@ -195,7 +195,7 @@ export const userEducationFormItemSchema: z.ZodType<UserEducationFormItem> = z
     school: userEducationSchoolSchema,
     degree: userEducationDegreeSchema,
     startYear: startYearSchema,
-    endYear: endYearSchema.nullable().optional(),
+    endYear: endYearSchema.or(z.literal('')),
   })
   .strict()
   .refine((s) => {
@@ -225,7 +225,7 @@ export const userExperienceFormItemSchema: z.ZodType<UserExperienceFormItem> = z
     title: userExperienceTitleSchema,
     description: userExperienceDescriptionSchema,
     startYear: startYearSchema,
-    endYear: endYearSchema.nullable().optional(),
+    endYear: endYearSchema.or(z.literal('')),
   })
   .strict()
   .refine((s) => {

@@ -69,7 +69,7 @@ export const addressCountrySchema: z.ZodType<AddressCountry> = z
 export const addressCreateAddressFormSchema: z.ZodType<AddressCreateAddressFormData> =
   z
     .object({
-      unitNumber: addressUnitNumberSchema.optional(),
+      unitNumber: addressUnitNumberSchema.or(z.literal('')),
       streetNumber: addressStreetNumberSchema,
       streetName: addressStreetNameSchema,
       suburb: addressSuburbSchema,
@@ -81,17 +81,17 @@ export const addressCreateAddressFormSchema: z.ZodType<AddressCreateAddressFormD
 export const addressUpdateAddressFormSchema: z.ZodType<AddressUpdateAddressFormData> =
   z
     .object({
-      unitNumber: addressUnitNumberSchema.optional(),
-      streetNumber: addressStreetNumberSchema.optional(),
-      streetName: addressStreetNameSchema.optional(),
-      suburb: addressSuburbSchema.optional(),
-      state: addressStateSchema.optional(),
-      country: addressCountrySchema.optional(),
+      unitNumber: addressUnitNumberSchema.or(z.literal('')),
+      streetNumber: addressStreetNumberSchema.or(z.literal('')),
+      streetName: addressStreetNameSchema.or(z.literal('')),
+      suburb: addressSuburbSchema.or(z.literal('')),
+      state: addressStateSchema.or(z.literal('')),
+      country: addressCountrySchema.or(z.literal('')),
     })
     .strict()
 
 /**
- * Request bodies
+ * Request Bodies
  */
 
 export const addressCreateAddressReqBodySchema: z.ZodType<AddressCreateUserAddressReqBody> =

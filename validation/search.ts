@@ -17,7 +17,7 @@ const searchDevbookQuerySchema: z.ZodType<SearchDevbookQuery> = z
   .max(100, { message: '100 character(s) max' })
 
 /**
- * Request bodies
+ * Request Bodies
  */
 
 export const searchDevbookReqBodySchema: z.ZodType<SearchDevbookFormData> = z
