@@ -1,6 +1,6 @@
 {
   "name": "@vkastanenka/devbook-validation",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/index.js",
   "keywords": [],
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/node": "^22.9.1",
     "@types/validator": "^13.12.2",
-    "@vkastanenka/devbook-types": "^0.0.3",
+    "@vkastanenka/devbook-types": "^0.0.4",
     "typescript": "^5.6.3"
   }
 }
