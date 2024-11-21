@@ -278,10 +278,10 @@ export const userCreateEducationReqBodySchema: z.ZodType<UserCreateEducationReqB
     .strict()
     .refine((s) => {
       if (s.endYear) {
-        if (Number(s.endYear) > Number(s.startYear)) return false
+        if (Number(s.startYear) > Number(s.endYear)) return false
       }
       return true
-    }, 'End year cannot be greater than start year')
+    }, 'Start year cannot be greater than end year')
 
 export const userUpdateEducationReqBodySchema: z.ZodType<UserUpdateEducationReqBody> =
   z
@@ -294,10 +294,10 @@ export const userUpdateEducationReqBodySchema: z.ZodType<UserUpdateEducationReqB
     .strict()
     .refine((s) => {
       if (s.endYear) {
-        if (Number(s.endYear) > Number(s.startYear)) return false
+        if (Number(s.startYear) > Number(s.endYear)) return false
       }
       return true
-    }, 'End year cannot be greater than start year')
+    }, 'Start year cannot be greater than end year')
 
 export const userCreateExperienceReqBodySchema: z.ZodType<UserCreateExperienceReqBody> =
   z
@@ -314,10 +314,10 @@ export const userCreateExperienceReqBodySchema: z.ZodType<UserCreateExperienceRe
     .strict()
     .refine((s) => {
       if (s.endYear) {
-        if (Number(s.endYear) > Number(s.startYear)) return false
+        if (Number(s.startYear) > Number(s.endYear)) return false
       }
       return true
-    }, 'End year cannot be greater than start year')
+    }, 'Start year cannot be greater than end year')
 
 export const userUpdateExperienceReqBodySchema: z.ZodType<UserUpdateExperienceReqBody> =
   z
@@ -333,7 +333,7 @@ export const userUpdateExperienceReqBodySchema: z.ZodType<UserUpdateExperienceRe
     .strict()
     .refine((s) => {
       if (s.endYear) {
-        if (Number(s.endYear) > Number(s.startYear)) return false
+        if (Number(s.startYear) > Number(s.endYear)) return false
       }
       return true
-    }, 'End year cannot be greater than start year')
+    }, 'Start year cannot be greater than end year')
