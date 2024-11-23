@@ -4,6 +4,7 @@ import {
   UserPassword,
   UserPhone,
   UserPronouns,
+  UserImage,
   UserHeadline,
   UserBio,
   UserWebsite,
@@ -73,6 +74,8 @@ export const userPasswordSchema: z.ZodType<UserPassword> = z
 const userPhoneSchema: z.ZodType<UserPhone> = phoneSchema.nullable()
 
 const userPronounsSchema: z.ZodType<UserPronouns> = z.string().nullable()
+
+const userImageSchema: z.ZodType<UserImage> = urlSchema.nullable()
 
 const userHeadlineSchema: z.ZodType<UserHeadline> = z
   .string()
@@ -257,6 +260,7 @@ export const userUpdateUserReqBodySchema: z.ZodType<UserUpdateUserReqBody> = z
     name: userNameSchema.optional(),
     email: emailSchema.optional(),
     pronouns: userPronounsSchema.optional(),
+    image: userImageSchema.optional(),
     headline: userHeadlineSchema.optional(),
     phone: userPhoneSchema.optional(),
     website: userWebsiteSchema.optional(),
